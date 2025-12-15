@@ -1,0 +1,5 @@
+{
+  "name": "PromptArchitect AI",
+  "description": "An automated Prompt Engineering system that analyzes inputs (text, images, screenshots) and generates production-ready, tool-specific prompts.",
+  "requestFramePermissions": []
+}
