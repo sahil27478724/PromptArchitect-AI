@@ -46,3 +46,10 @@ export interface WizardStepProps {
   onNext: () => void;
   onBack: () => void;
 }
+
+declare global {
+  interface AIStudio {
+    hasSelectedApiKey: () => Promise<boolean>;
+    openSelectKey: () => Promise<void>;
+  }
+}

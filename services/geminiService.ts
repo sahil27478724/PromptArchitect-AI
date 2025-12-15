@@ -2,13 +2,12 @@ import { GoogleGenAI } from "@google/genai";
 import { AppState, InputType } from "../types";
 import { SYSTEM_ARCHITECT_PROMPT } from "../constants";
 
-// Initialize the API client
-// Note: We use the browser-compatible GoogleGenAI client.
-// The API key is injected via process.env.API_KEY as per instructions.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export const generateArchitectPrompt = async (state: AppState): Promise<string> => {
   try {
+    // Initialize the API client inside the function call.
+    // This ensures we pick up the dynamically selected API_KEY from the auth flow.
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+
     const parts: any[] = [];
 
     // 1. Add the User Intent & Configuration as text
